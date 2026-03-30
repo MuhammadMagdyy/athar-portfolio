@@ -130,7 +130,7 @@ const Admin = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#F7F4F0] p-8 md:p-20 font-sans text-[#1A1A1A] selection:bg-[#E2D1B3]">
+    <div className="min-h-screen bg-[#F7F4F0] p-6 md:p-20 font-sans text-[#1A1A1A] selection:bg-[#E2D1B3]">
       
       {/* --- SECURITY CHECK MODAL --- */}
       <AnimatePresence>
@@ -169,15 +169,20 @@ const Admin = () => {
         )}
       </AnimatePresence>
 
-      <header className="mb-24 flex justify-between items-end border-b border-[#8B735B]/20 pb-8">
-        <div>
-          <h1 className="text-[10px] tracking-[0.8em] uppercase opacity-40 mb-2">Athar Management</h1>
-          <h2 className="text-3xl font-light tracking-tighter italic font-serif text-[#1A1A1A]">Studio Interface</h2>
+      {/* --- UPDATED HEADER WITH LOGO --- */}
+      <header className="mb-16 md:mb-24 flex justify-between items-end border-b border-[#8B735B]/20 pb-8">
+        <div className="flex items-center gap-4">
+          {/* Logo references favicon.svg in public folder */}
+          <img src="/favicon.svg" alt="Athar Logo" className="h-8 md:h-12 w-auto object-contain opacity-80" />
+          <div>
+            <h1 className="text-[10px] tracking-[0.8em] uppercase opacity-40 mb-1">Athar</h1>
+            <h2 className="text-xl md:text-3xl font-light tracking-tighter italic font-serif text-[#1A1A1A]">Visual Archive</h2>
+          </div>
         </div>
-        <Link to="/" className="text-[9px] tracking-widest opacity-30 uppercase hover:opacity-100 transition-opacity">Exit</Link>
+        <Link to="/" className="text-[9px] tracking-widest opacity-30 uppercase hover:opacity-100 transition-opacity pb-1">Exit</Link>
       </header>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-32 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-32 max-w-7xl mx-auto">
         <section>
           <div className="flex items-center gap-4 mb-10">
             <span className="text-[10px] font-bold text-[#8B735B]">01</span>
@@ -199,7 +204,7 @@ const Admin = () => {
               <option value="">Destination Collection...</option>
               {projects.map(p => <option key={p.id} value={p.id}>{p.name}</option>)}
             </select>
-            <div className="relative group border border-dashed border-[#8B735B]/30 p-16 text-center hover:bg-white/40 transition-all cursor-pointer">
+            <div className="relative group border border-dashed border-[#8B735B]/30 p-12 md:p-16 text-center hover:bg-white/40 transition-all cursor-pointer">
               <input type="file" multiple onChange={(e) => setSelectedFiles(Array.from(e.target.files))} className="absolute inset-0 w-full h-full opacity-0 cursor-pointer" />
               <p className="text-[10px] tracking-[0.4em] uppercase opacity-40">{selectedFiles.length > 0 ? `${selectedFiles.length} Ready` : "Select Files"}</p>
             </div>
@@ -215,12 +220,13 @@ const Admin = () => {
             <span className="text-[10px] font-bold text-[#8B735B]">03</span>
             <h3 className="text-[10px] tracking-[0.4em] uppercase font-medium">Archive Management</h3>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Responsive Grid: 1 col on mobile, 2 on tablet, 3 on desktop */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {projects.map((proj, idx) => (
               <div 
                 key={proj.id} 
                 onClick={() => { setEditingProject(proj); setTempProjectName(proj.name); }}
-                className="bg-white/40 p-10 flex justify-between items-center group border border-transparent hover:border-[#8B735B]/30 transition-all cursor-pointer shadow-sm relative overflow-hidden"
+                className="bg-white/40 p-8 md:p-10 flex justify-between items-center group border border-transparent hover:border-[#8B735B]/30 transition-all cursor-pointer shadow-sm relative overflow-hidden"
               >
                 <div>
                   <p className="text-[9px] tracking-[0.4em] uppercase opacity-20 mb-2">Ref. 0{idx + 1}</p>
@@ -228,7 +234,7 @@ const Admin = () => {
                 </div>
                 <button 
                   onClick={(e) => { e.stopPropagation(); setItemToDelete({ type: 'project', id: proj.id }); }}
-                  className="text-[12px] opacity-0 group-hover:opacity-40 transition-all hover:opacity-100 hover:text-red-800 p-2"
+                  className="text-[12px] opacity-40 lg:opacity-0 group-hover:opacity-100 transition-all hover:opacity-100 hover:text-red-800 p-2"
                 >
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2M10 11v6M14 11v6" /></svg>
                 </button>
@@ -243,27 +249,27 @@ const Admin = () => {
         {editingProject && (
           <motion.div 
             initial={{ x: '100%' }} animate={{ x: 0 }} exit={{ x: '100%' }}
-            className="fixed inset-y-0 right-0 w-full lg:w-[600px] bg-[#F7F4F0] shadow-[-30px_0_60px_rgba(0,0,0,0.1)] z-[100] p-12 overflow-y-auto"
+            className="fixed inset-y-0 right-0 w-full lg:w-[600px] bg-[#F7F4F0] shadow-[-30px_0_60px_rgba(0,0,0,0.1)] z-[100] p-8 md:p-12 overflow-y-auto"
           >
-            <div className="flex justify-between items-center mb-24">
+            <div className="flex justify-between items-center mb-16 md:mb-24">
               <button onClick={() => setEditingProject(null)} className="text-[9px] tracking-[0.5em] uppercase opacity-40 hover:opacity-100 transition-opacity">← Back</button>
               <div className="h-[1px] flex-1 mx-10 bg-[#8B735B]/10"></div>
               <span className="text-[9px] tracking-[0.5em] uppercase opacity-20">Editor</span>
             </div>
 
-            <div className="space-y-24">
+            <div className="space-y-16 md:space-y-24">
               <div className="space-y-8">
                 <h4 className="text-[10px] tracking-[0.4em] uppercase text-[#8B735B]">Collection Title</h4>
                 <input 
                   type="text" value={tempProjectName} onChange={(e) => setTempProjectName(e.target.value)}
-                  className="w-full bg-transparent border-b border-[#1A1A1A]/10 py-6 outline-none text-3xl font-serif italic focus:border-[#8B735B] transition-all"
+                  className="w-full bg-transparent border-b border-[#1A1A1A]/10 py-6 outline-none text-2xl md:text-3xl font-serif italic focus:border-[#8B735B] transition-all"
                 />
                 <button onClick={handleRenameProject} className="text-[9px] tracking-[0.4em] uppercase bg-[#1A1A1A] text-[#F7F4F0] px-10 py-4 hover:bg-[#8B735B] transition-all">Update Identity</button>
               </div>
 
               <div className="space-y-10">
                 <h4 className="text-[10px] tracking-[0.4em] uppercase text-[#8B735B]">Collection Manifest</h4>
-                <div className="grid grid-cols-2 gap-6">
+                <div className="grid grid-cols-2 gap-4 md:gap-6">
                   {editingProject.photos?.map((photo) => (
                     <div key={photo.id} className="relative aspect-[3/4] group overflow-hidden bg-[#1A1A1A]">
                       <img src={photo.url} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all duration-700" alt="" />
@@ -284,7 +290,7 @@ const Admin = () => {
         )}
       </AnimatePresence>
 
-      <footer className="mt-40 text-center opacity-20 pb-20">
+      <footer className="mt-24 md:mt-40 text-center opacity-20 pb-10">
          <p className="text-[8px] tracking-[1.2em] uppercase">Athar Visual Management System</p>
       </footer>
     </div>

@@ -12,7 +12,6 @@ import models, schemas, database
 load_dotenv()
 
 # --- SECURE ENVIRONMENT CONFIGURATION ---
-# Removed hardcoded strings to ensure your credentials stay private
 cloudinary.config( 
   cloud_name = os.getenv("CLOUDINARY_NAME"), 
   api_key = os.getenv("CLOUDINARY_API_KEY"), 
@@ -22,10 +21,16 @@ cloudinary.config(
 app = FastAPI()
 
 # --- CORS CONFIGURATION ---
-# For deployment, we will eventually replace "*" with your actual frontend URL
+# Replace the URL in the list below with your actual Render Static Site URL
+origins = [
+    "http://localhost:5173",            # Local React/Vite development
+    "https://athar-portfolio.onrender.com", # <--- UPDATE THIS with your Static Site URL
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"], 
+    allow_origins=origins, # Changed from ["*"] to specify your trusted domains
+    allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -86,6 +91,11 @@ async def upload_photo(
     file: UploadFile = File(...), 
     db: Session = Depends(database.get_db)
 ):
+    # Check if project exists before uploading to Cloudinary to save API calls
+    project_exists = db.query(models.Project).filter(models.Project.id == project_id).first()
+    if not project_exists:
+        raise HTTPException(status_code=404, detail="Project not found")
+
     result = cloudinary.uploader.upload(
         file.file,
         folder=f"athar/project_{project_id}",
@@ -116,7 +126,8 @@ def delete_project(project_id: int, db: Session = Depends(database.get_db)):
 def delete_photo(photo_id: int, db: Session = Depends(database.get_db)):
     photo = db.query(models.Photo).filter(models.Photo.id == photo_id).first()
     if not photo:
-        raise HTTPException(status_code=404, detail="Photo removed")
+        # Fixed: Return 404 if the photo actually doesn't exist
+        raise HTTPException(status_code=404, detail="Photo not found")
     
     db.delete(photo)
     db.commit()

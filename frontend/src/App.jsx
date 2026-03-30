@@ -3,6 +3,7 @@ import Gallery from './components/Gallery';
 import Admin from './Admin';
 import ProjectDetail from './components/ProjectDetail';
 import Project from './pages/Project';
+
 import ProtectedRoute from './ProtectedRoute'; 
 
 function App() {

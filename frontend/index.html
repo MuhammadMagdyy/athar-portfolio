@@ -3,11 +3,68 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
     <title>Athar | Visual Archive</title>
+    <meta name="description" content="A curated visual archive and studio interface." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:italic&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+      /* This ensures the screen doesn't "flash" white before the app loads */
+      body {
+        margin: 0;
+        background-color: #F7F4F0;
+        overflow-x: hidden;
+      }
+
+      /* Optional: A very minimal loader so the user knows something is happening */
+      #initial-loader {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #F7F4F0;
+        z-index: 9999;
+        transition: opacity 0.5s ease;
+      }
+
+      #initial-loader img {
+        width: 40px;
+        height: auto;
+        opacity: 0.2;
+        animation: pulse 2s infinite ease-in-out;
+      }
+
+      @keyframes pulse {
+        0% { opacity: 0.1; }
+        50% { opacity: 0.3; }
+        100% { opacity: 0.1; }
+      }
+    </style>
   </head>
   <body>
+    <div id="initial-loader">
+      <img src="/favicon.svg" alt="Loading..." />
+    </div>
+
     <div id="root"></div>
+
     <script type="module" src="/src/main.jsx"></script>
+
+    <script>
+      // This script removes the loader once the React app is ready
+      window.addEventListener('load', () => {
+        const loader = document.getElementById('initial-loader');
+        if (loader) {
+          loader.style.opacity = '0';
+          setTimeout(() => loader.remove(), 500);
+        }
+      });
+    </script>
   </body>
 </html>

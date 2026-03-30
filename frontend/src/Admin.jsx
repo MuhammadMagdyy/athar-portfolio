@@ -169,17 +169,15 @@ const Admin = () => {
         )}
       </AnimatePresence>
 
-      {/* --- UPDATED HEADER WITH LOGO --- */}
       <header className="mb-16 md:mb-24 flex justify-between items-end border-b border-[#8B735B]/20 pb-8">
         <div className="flex items-center gap-4">
-          {/* Logo references favicon.svg in public folder */}
           <img src="/favicon.svg" alt="Athar Logo" className="h-8 md:h-12 w-auto object-contain opacity-80" />
           <div>
             <h1 className="text-[10px] tracking-[0.8em] uppercase opacity-40 mb-1">Athar</h1>
-            <h2 className="text-xl md:text-3xl font-light tracking-tighter italic font-serif text-[#1A1A1A]">Visual Archive</h2>
+            <h2 className="text-xl md:text-3xl font-light tracking-tighter italic font-serif text-[#1A1A1A]">Studio Interface</h2>
           </div>
         </div>
-        <Link to="/" className="text-[9px] tracking-widest opacity-30 uppercase hover:opacity-100 transition-opacity pb-1">Exit</Link>
+        <Link to="/" className="text-[9px] tracking-widest opacity-30 uppercase hover:opacity-100 transition-opacity">Exit</Link>
       </header>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-32 max-w-7xl mx-auto">
@@ -220,7 +218,6 @@ const Admin = () => {
             <span className="text-[10px] font-bold text-[#8B735B]">03</span>
             <h3 className="text-[10px] tracking-[0.4em] uppercase font-medium">Archive Management</h3>
           </div>
-          {/* Responsive Grid: 1 col on mobile, 2 on tablet, 3 on desktop */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {projects.map((proj, idx) => (
               <div 

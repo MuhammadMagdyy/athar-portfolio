@@ -6,7 +6,7 @@ const ProtectedRoute = ({ children }) => {
   const [inputKey, setInputKey] = useState("");
   const [error, setError] = useState(false);
   
-  // Get the key from your Environment Variables
+  // Note: Ensure VITE_ADMIN_KEY is set in your Render Environment Variables
   const adminKey = import.meta.env.VITE_ADMIN_KEY;
   const isAuthorized = localStorage.getItem('athar_access') === adminKey;
 
@@ -14,7 +14,7 @@ const ProtectedRoute = ({ children }) => {
     e.preventDefault();
     if (inputKey === adminKey) {
       localStorage.setItem('athar_access', inputKey);
-      window.location.reload(); // Refresh to show the Admin content
+      window.location.reload(); 
     } else {
       setError(true);
       setTimeout(() => setError(false), 2000);
@@ -29,7 +29,7 @@ const ProtectedRoute = ({ children }) => {
           animate={{ opacity: 1, y: 0 }}
           className="max-w-sm w-full space-y-12 text-center"
         >
-          {/* Header Section */}
+          {/* --- LOCK SCREEN HEADER --- */}
           <header className="space-y-4">
             <div className="flex justify-center mb-8">
                <img src="/favicon.svg" alt="Logo" className="h-12 w-auto opacity-80" />
@@ -38,7 +38,7 @@ const ProtectedRoute = ({ children }) => {
             <h2 className="text-3xl font-light italic font-serif text-[#1A1A1A]">Access Restricted</h2>
           </header>
 
-          {/* Login Form */}
+          {/* --- KEY ENTRY FORM --- */}
           <form onSubmit={handleLogin} className="space-y-8">
             <div className="relative">
               <input 

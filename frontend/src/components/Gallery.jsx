@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, useScroll, useSpring } from "framer-motion";
 import { Link } from 'react-router-dom';
+import API_BASE_URL from "../api"; // Assuming Gallery.jsx is in /src/components/
 
 // --- ANIMATION VARIANTS ---
 const letterVariant = {
@@ -28,7 +29,8 @@ const Gallery = () => {
   });
 
   useEffect(() => {
-    fetch("http://localhost:8000/api/projects")
+    // Previous: fetch("http://localhost:8000/api/projects")
+    fetch(`${API_BASE_URL}/projects`)
       .then(res => res.json())
       .then(data => setProjects(data))
       .catch(err => console.error("Database connection failed:", err));

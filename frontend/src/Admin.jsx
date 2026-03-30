@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from 'react-router-dom';
+import API_BASE_URL from "./api"; // Ensure this file exists with your Render URL
 
 const Admin = () => {
   const [projects, setProjects] = useState([]);
@@ -18,7 +19,9 @@ const Admin = () => {
 
   const fetchProjects = async () => {
     try {
-      const res = await fetch("http://localhost:8000/api/projects");
+      // Previous: const res = await fetch("http://localhost:8000/api/projects");
+      const res = await fetch(`${API_BASE_URL}/projects`);
+      
       const data = await res.json();
       // Sort by ID descending so newest projects are always at the top
       setProjects(data.sort((a, b) => b.id - a.id));
@@ -33,7 +36,12 @@ const Admin = () => {
   const handleConfirmDeletion = async () => {
     if (!itemToDelete) return;
     const { type, id } = itemToDelete;
-    const endpoint = type === 'project' ? `http://localhost:8000/api/projects/${id}` : `http://localhost:8000/api/photos/${id}`;
+    
+    // Previous local endpoints:
+    // const endpoint = type === 'project' ? `http://localhost:8000/api/projects/${id}` : `http://localhost:8000/api/photos/${id}`;
+    const endpoint = type === 'project' 
+      ? `${API_BASE_URL}/projects/${id}` 
+      : `${API_BASE_URL}/photos/${id}`;
 
     const res = await fetch(endpoint, { method: 'DELETE' });
     if (res.ok) {
@@ -41,14 +49,17 @@ const Admin = () => {
         setProjects(projects.filter(p => p.id !== id));
         if (editingProject?.id === id) setEditingProject(null);
       } else {
-        setEditingProject({ ...editingProject, photos: editingProject.photos.filter(p => p.id !== id) });
+        // Update the editing drawer UI if an image is deleted
+        setEditingProject({ 
+          ...editingProject, 
+          photos: editingProject.photos.filter(p => p.id !== id) 
+        });
       }
       triggerNotification(`${type === 'project' ? 'Collection' : 'Image'} Removed`);
     }
     setItemToDelete(null);
   };
 
-  // --- FIXED RENAME LOGIC ---
   const handleRenameProject = async () => {
     if (!tempProjectName || !editingProject) return;
 
@@ -56,7 +67,8 @@ const Admin = () => {
     formData.append('name', tempProjectName);
 
     try {
-      const res = await fetch(`http://localhost:8000/api/projects/${editingProject.id}`, {
+      // Previous: const res = await fetch(`http://localhost:8000/api/projects/${editingProject.id}`, {
+      const res = await fetch(`${API_BASE_URL}/projects/${editingProject.id}`, {
         method: 'PUT',
         body: formData,
       });
@@ -64,7 +76,7 @@ const Admin = () => {
       if (res.ok) {
         triggerNotification("Identity Updated", "success");
         setEditingProject(null); 
-        fetchProjects(); // Refresh the list to show the new name
+        fetchProjects(); 
       } else {
         triggerNotification("Update Failed", "error");
       }
@@ -78,10 +90,16 @@ const Admin = () => {
     if (!newProjectName) return;
     const formData = new FormData();
     formData.append('name', newProjectName);
-    const res = await fetch("http://localhost:8000/api/projects", { method: 'POST', body: formData });
+
+    // Previous: const res = await fetch("http://localhost:8000/api/projects", { method: 'POST', body: formData });
+    const res = await fetch(`${API_BASE_URL}/projects`, { 
+      method: 'POST', 
+      body: formData 
+    });
+
     if (res.ok) {
       const created = await res.json();
-      setProjects([created, ...projects]); // Add to top of list
+      setProjects([created, ...projects]); 
       setNewProjectName('');
       triggerNotification("Collection Initialized");
     }
@@ -91,13 +109,20 @@ const Admin = () => {
     e.preventDefault();
     if (!selectedProjectId || selectedFiles.length === 0) return alert("Select project.");
     setUploading(true);
+    
     for (const file of selectedFiles) {
       const formData = new FormData();
       formData.append('title', file.name.split('.')[0]);
       formData.append('file', file);
       formData.append('project_id', selectedProjectId);
-      await fetch("http://localhost:8000/api/upload", { method: 'POST', body: formData });
+      
+      // Previous: await fetch("http://localhost:8000/api/upload", { method: 'POST', body: formData });
+      await fetch(`${API_BASE_URL}/upload`, { 
+        method: 'POST', 
+        body: formData 
+      });
     }
+    
     setUploading(false);
     setSelectedFiles([]);
     triggerNotification(`Gallery Updated`, 'success');

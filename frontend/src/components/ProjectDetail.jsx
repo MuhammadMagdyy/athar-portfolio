@@ -2,16 +2,18 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Masonry from 'react-masonry-css';
+import API_BASE_URL from "../api"; 
 
 const ProjectDetail = () => {
-  const { id } = useParams(); // Grabs the "id" from the URL
+  const { id } = useParams(); 
   const [project, setProject] = useState(null);
 
   useEffect(() => {
-    // We'll update the backend to support this endpoint next
-    fetch(`http://localhost:8000/api/projects/${id}`)
+    // Previous: fetch(`http://localhost:8000/api/projects/${id}`)
+    fetch(`${API_BASE_URL}/projects/${id}`)
       .then(res => res.json())
-      .then(data => setProject(data));
+      .then(data => setProject(data))
+      .catch(err => console.error("Error fetching detail:", err));
   }, [id]);
 
   if (!project) return <div className="p-20 text-center uppercase tracking-widest text-xs opacity-50">Loading Impression...</div>;

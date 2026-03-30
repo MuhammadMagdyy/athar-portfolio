@@ -1,18 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion, useScroll, useSpring } from "framer-motion";
+import API_BASE_URL from "../api"; // Assuming api.js is in /src
 
 const Project = () => {
-  const { id } = useParams(); // Gets the ID from the URL (e.g., /project/5)
+  const { id } = useParams(); 
   const [project, setProject] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // Scroll Progress for the specific collection
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30 });
 
   useEffect(() => {
-    fetch(`http://localhost:8000/api/projects/${id}`)
+    // Previous: fetch(`http://localhost:8000/api/projects/${id}`)
+    fetch(`${API_BASE_URL}/projects/${id}`)
       .then(res => res.json())
       .then(data => {
         setProject(data);
@@ -33,10 +34,8 @@ const Project = () => {
       animate={{ opacity: 1 }} 
       className="bg-[#F7F4F0] min-h-screen text-[#1A1A1A] font-sans selection:bg-[#E2D1B3]"
     >
-      {/* Local Progress Bar */}
       <motion.div className="fixed top-0 left-0 right-0 h-[2px] bg-[#8B735B] z-[100] origin-left" style={{ scaleX }} />
 
-      {/* --- BACK NAVIGATION --- */}
       <nav className="fixed top-10 left-10 z-50">
         <Link to="/" className="group flex items-center gap-4">
           <span className="text-[10px] tracking-[0.5em] uppercase opacity-40 group-hover:opacity-100 group-hover:text-[#8B735B] transition-all">
@@ -45,7 +44,6 @@ const Project = () => {
         </Link>
       </nav>
 
-      {/* --- PROJECT HEADER --- */}
       <header className="pt-40 pb-20 px-10 text-center">
         <motion.h1 
           initial={{ y: 20, opacity: 0 }}
@@ -62,7 +60,6 @@ const Project = () => {
         />
       </header>
 
-      {/* --- EDITORIAL IMAGE STACK --- */}
       <main className="max-w-[1200px] mx-auto px-6 pb-60 space-y-40 md:space-y-80">
         {project?.photos?.map((photo, index) => (
           <motion.section 
@@ -81,7 +78,6 @@ const Project = () => {
                />
             </div>
             
-            {/* Subtle Title for each photo */}
             <div className={`mt-8 ${index % 2 === 0 ? 'text-left pl-2' : 'text-right pr-2'}`}>
               <p className="text-[9px] tracking-[0.6em] uppercase opacity-30">{photo.title}</p>
               <p className="text-[8px] tracking-[0.3em] uppercase opacity-10 mt-1">Athar Archive / 0{index + 1}</p>
@@ -90,7 +86,6 @@ const Project = () => {
         ))}
       </main>
 
-      {/* --- PROJECT FOOTER --- */}
       <footer className="py-40 bg-white/30 text-center border-t border-[#8B735B]/10">
         <p className="text-[10px] tracking-[1.5em] uppercase opacity-30 mb-10">End of Collection</p>
         <Link 

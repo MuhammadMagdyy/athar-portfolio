@@ -35,6 +35,10 @@ models.Base.metadata.create_all(bind=database.engine)
 
 # --- PROJECTS ---
 
+@app.get("/")
+def home():
+    return {"status": "Athar API is Live", "version": "1.0.0"}
+
 @app.get("/api/projects", response_model=List[schemas.Project])
 def get_projects(db: Session = Depends(database.get_db)):
     return db.query(models.Project).options(joinedload(models.Project.photos)).all()

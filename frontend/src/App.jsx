@@ -15,7 +15,12 @@ function App() {
         <Route path="/project/:id" element={<Project />} />
 
         {/* Admin View: Your secret dashboard */}
-        <Route path="/admin" element={<Admin />} />
+        {/* <Route path="/admin" element={<Admin />} /> */}
+        <Route path="/admin" element={
+              <ProtectedRoute>
+                <Admin />
+              </ProtectedRoute>
+        } />
       </Routes>
     </Router>
   );

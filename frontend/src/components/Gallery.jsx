@@ -157,7 +157,7 @@ const Gallery = () => {
       <footer className="py-40 text-center border-t border-[#8B735B]/10 mx-10 relative">
         <div className="flex flex-col items-center gap-4">
           <p className="text-[10px] md:text-[11px] tracking-[1.5em] text-[#1A1A1A]/40 uppercase pl-[1.5em]">
-            Visual Impact by Alisaa
+            Visual Impact by Alissa
           </p>
           <div className="flex flex-col items-center gap-2">
             <p className="font-light text-[9px] md:text-[11px] tracking-[0.8em] text-[#8B735B] uppercase pl-[0.8em]">

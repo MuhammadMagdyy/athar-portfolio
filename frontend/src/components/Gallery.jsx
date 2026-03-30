@@ -90,7 +90,7 @@ const Gallery = () => {
 
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 2, duration: 1 }} className="mt-8">
             <p className="text-xs md:text-xl tracking-[1.8em] text-[#1A1A1A]/50 uppercase pl-[1.8em]">
-              Alisaa Photography
+              Alissa Photography
             </p>
           </motion.div>
         </div>

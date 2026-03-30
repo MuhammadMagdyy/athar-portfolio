@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from 'react-router-dom';
-import API_BASE_URL from "./api"; // Ensure this file exists with your Render URL
+import API_BASE_URL from "./api"; 
 
 const Admin = () => {
   const [projects, setProjects] = useState([]);

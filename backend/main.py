@@ -24,7 +24,7 @@ app = FastAPI()
 # Replace the URL in the list below with your actual Render Static Site URL
 origins = [
     "http://localhost:5173",            # Local React/Vite development
-    "https://athar-portfolio.onrender.com", # <--- UPDATE THIS with your Static Site URL
+    "https://athar-frontend.onrender.com", # <--- UPDATE THIS with your Static Site URL
 ]
 
 app.add_middleware(

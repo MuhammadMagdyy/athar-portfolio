@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, useScroll, useSpring } from "framer-motion";
 import { Link } from 'react-router-dom';
-import API_BASE_URL from "../api"; // Assuming Gallery.jsx is in /src/components/
+import API_BASE_URL from "frontend/src/api.js"; 
 
 // --- ANIMATION VARIANTS ---
 const letterVariant = {

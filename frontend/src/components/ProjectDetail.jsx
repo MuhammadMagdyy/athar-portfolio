@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Masonry from 'react-masonry-css';
-import API_BASE_URL from "../api"; 
+import API_BASE_URL from "frontend/src/api.js"; 
 
 const ProjectDetail = () => {
   const { id } = useParams(); 

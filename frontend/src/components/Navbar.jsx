@@ -21,7 +21,7 @@ const Navbar = () => {
         <Link to="/" className="text-[9px] tracking-[0.4em] uppercase text-white hover:text-[#8B735B] transition-colors">
           Home
         </Link>
-        {/* This is the "Secret" door for Muhammad/Alisaa */}
+        {/* This is the "Secret" door for Muhammad/Alissa */}
         <Link to="/admin" className="text-[9px] tracking-[0.4em] uppercase text-white/30 hover:text-white transition-colors">
           Studio
         </Link>

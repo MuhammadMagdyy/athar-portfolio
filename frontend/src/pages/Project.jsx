@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion, useScroll, useSpring } from "framer-motion";
-import API_BASE_URL from "../api";
+import API_BASE_URL from "../api.js";
 
 const Project = () => {
   const { id } = useParams(); 

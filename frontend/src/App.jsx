@@ -1,27 +1,22 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Gallery from './components/Gallery';
-import Admin from './Admin';
-import ProjectDetail from './components/ProjectDetail';
-import Project from './pages/Project';
-
-import ProtectedRoute from './ProtectedRoute'; 
+import Gallery from './pages/Gallery';
+import ProjectDetail from './pages/ProjectDetail';
+import Admin from './pages/Admin';
+import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
   return (
     <Router>
       <Routes>
-        {/* Public View: What everyone sees */}
+        {/* Public Routes */}
         <Route path="/" element={<Gallery />} />
         <Route path="/project/:id" element={<ProjectDetail />} />
         
-        <Route path="/project/:id" element={<Project />} />
-
-        {/* Admin View: Your secret dashboard */}
-        {/* <Route path="/admin" element={<Admin />} /> */}
+        {/* Protected Admin Routes */}
         <Route path="/admin" element={
-              <ProtectedRoute>
-                <Admin />
-              </ProtectedRoute>
+          <ProtectedRoute>
+            <Admin />
+          </ProtectedRoute>
         } />
       </Routes>
     </Router>
@@ -29,6 +24,3 @@ function App() {
 }
 
 export default App;
-
-
-

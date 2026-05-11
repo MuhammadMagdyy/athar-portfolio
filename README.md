@@ -54,7 +54,7 @@ Access to administrative tools is gated by a dedicated "Access System" interface
 Once authenticated, the user enters the **System: 02** dashboard. This interface is built for high-speed content ingestion and collection initialization.
 
 <p align="center">
-  <img src="https://github.com/MuhammadMagdyy/athar-portfolio/raw/main/screenshots/admin.png" width="95%" alt="Main Management Dashboard" />
+  <img src="https://github.com/MuhammadMagdyy/athar-portfolio/raw/main/admin.png" width="95%" alt="Main Management Dashboard" />
   <br><em>Figure 6: The core Management interface featuring Archive Initialization and Trace Ingestion.</em>
 </p>
 
@@ -65,7 +65,7 @@ Once authenticated, the user enters the **System: 02** dashboard. This interface
 The **Archive Management** section provides a bird's-eye view of all active collections, including live asset counts for each geographic location.
 
 <p align="center">
-  <img src="https://github.com/MuhammadMagdyy/athar-portfolio/raw/main/screenshots/projectsviewinadmin.png" width="95%" alt="Archive Management Fleet" />
+  <img src="https://github.com/MuhammadMagdyy/athar-portfolio/raw/main/projectsviewinadmin.png" width="95%" alt="Archive Management Fleet" />
   <br><em>Figure 7: Fleet overview showing active projects like Unterwalden, Copenhagen, and Barcelona.</em>
 </p>
 
@@ -73,7 +73,7 @@ The **Archive Management** section provides a bird's-eye view of all active coll
 For existing archives, the **Trace Editor** provides a side-panel interface to modify metadata or manage individual assets without leaving the dashboard.
 
 <p align="center">
-  <img src="https://github.com/MuhammadMagdyy/athar-portfolio/raw/main/screenshots/projectmanagement.png" width="95%" alt="Trace Editor Sidebar" />
+  <img src="https://github.com/MuhammadMagdyy/athar-portfolio/raw/main/projectmanagement.png" width="95%" alt="Trace Editor Sidebar" />
   <br><em>Figure 8: Using the "Redefine Identity" tool and managing assets for specific traces.</em>
 </p>
 

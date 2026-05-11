@@ -17,7 +17,7 @@ The entry point features a high-contrast design that adapts to the user's aesthe
 
 | **Dark Mode (Default)** | **Light Mode (Clean)** |
 |---|---|
-| ![Landing Dark](https://github.com/MuhammadMagdyy/athar-portfolio/raw/main/screenshots/Image%2011-05-2026%20at%201.10%20PM.png) | ![Landing Light](https://github.com/MuhammadMagdyy/athar-portfolio/raw/main/screenshots/Screenshot%202026-05-11%20at%201.13.13%20PM.png) |
+| ![Landing Dark](https://github.com/MuhammadMagdyy/athar-portfolio/raw/main/screenshots/Image 11-05-2026 at 1.10 PM.png) | ![Landing Light](https://github.com/MuhammadMagdyy/athar-portfolio/raw/main/screenshots/Screenshot%202026-05-11%20at%201.13.13%20PM.png) |
 | *Figure 1: Hero section with glow-active branding.* | *Figure 2: Hero section in minimalist light mode.* |
 
 ### 2. The Gallery Overview

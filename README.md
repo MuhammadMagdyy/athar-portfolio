@@ -4,7 +4,9 @@
 ![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi)
 ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
+
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=MuhammadMagdyy&layout=compact&theme=vision-friendly-dark)
+![Repo Stats](https://github-readme-stats.vercel.app/api/pin/?username=MuhammadMagdyy&repo=athar-portfolio&theme=vision-friendly-dark)
 
 **Athar** (أثر) is a high-fidelity visual archiving platform designed to curate and manage geographic "traces." The system balances a minimalist, immersive public gallery with a powerful, industrial-grade administrative backend.
 

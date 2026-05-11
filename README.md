@@ -1,9 +1,3 @@
-<div align="center">
-  <img src="./github-header-banner.png" alt="Athar Portfolio Banner" width="800">
-  <h1>Athar Portfolio</h1>
-  <p>A sleek, full-stack portfolio solution built with React and FastAPI.</p>
-</div>
-
 # Athar: Visual Trace Studio 🏛️
 
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)

@@ -46,7 +46,8 @@ The **Athar Management System** is a private-tier dashboard designed for curator
 Access to administrative tools is gated by a dedicated "Access System" interface, ensuring that curation tools and professional design metadata remain protected.
 
 <p align="center">
-  <img src="https://github.com/MuhammadMagdyy/athar-portfolio/raw/main/screenshots/Image%2011-05-2026%20at%201.12%20PM.png" width="85%" alt="Access System Gate" />
+  <img src="https://github.com/MuhammadMagdyy/athar-portfolio/raw/main/adminaccess.png" width="85%" alt="Access System Gate" />
+  <img src="https://github.com/MuhammadMagdyy/athar-portfolio/raw/main/adminenterpass.png" width="85%" alt="Access System Gate" />
   <br><em>Figure 5: The administrative entry point for system authentication.</em>
 </p>
 

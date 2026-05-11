@@ -17,14 +17,14 @@ The entry point features a high-contrast design that adapts to the user's aesthe
 
 | **Dark Mode (Default)** | **Light Mode (Clean)** |
 |---|---|
-| ![Landing Dark](https://github.com/MuhammadMagdyy/athar-portfolio/raw/main/screenshots/Image 11-05-2026 at 1.10 PM.png) | ![Landing Light](https://github.com/MuhammadMagdyy/athar-portfolio/raw/main/screenshots/Screenshot%202026-05-11%20at%201.13.13%20PM.png) |
+| ![Landing Dark](https://github.com/MuhammadMagdyy/athar-portfolio/raw/main/dark) | ![Landing Light](https://github.com/MuhammadMagdyy/athar-portfolio/raw/main/screenshots/light) |
 | *Figure 1: Hero section with glow-active branding.* | *Figure 2: Hero section in minimalist light mode.* |
 
 ### 2. The Gallery Overview
 The public gallery organizes visual traces by global location. Each project card displays the city name, national flag, and an "Inspect Trace" overlay for user interaction.
 
 <p align="center">
-  <img src="https://github.com/MuhammadMagdyy/athar-portfolio/raw/main/screenshots/Image%2011-05-2026%20at%201.11%20PM.png" width="90%" alt="Gallery Overview" />
+  <img src="https://github.com/MuhammadMagdyy/athar-portfolio/raw/main/gallery.png" />
   <br><em>Figure 3: Scrollable gallery view showcasing Port Said and Ulm archives.</em>
 </p>
 
@@ -32,7 +32,7 @@ The public gallery organizes visual traces by global location. Each project card
 When a user "inspects" a trace, the system transitions to a dedicated project view. This layout prioritizes imagery, providing high-resolution previews and download capabilities for specific assets.
 
 <p align="center">
-  <img src="https://github.com/MuhammadMagdyy/athar-portfolio/raw/main/screenshots/Screenshot%202026-05-11%20at%201.11.55%20PM.png" width="90%" alt="Project Detail" />
+  <img src="https://github.com/MuhammadMagdyy/athar-portfolio/raw/main/gallerydetailed.png" width="90%" alt="Project Detail" />
   <br><em>Figure 4: Detailed view for the Ulm, Germany archive.</em>
 </p>
 
@@ -54,7 +54,7 @@ Access to administrative tools is gated by a dedicated "Access System" interface
 Once authenticated, the user enters the **System: 02** dashboard. This interface is built for high-speed content ingestion and collection initialization.
 
 <p align="center">
-  <img src="https://github.com/MuhammadMagdyy/athar-portfolio/raw/main/screenshots/Image%2011-05-2026%20at%201.12%20PM%20(1).png" width="95%" alt="Main Management Dashboard" />
+  <img src="https://github.com/MuhammadMagdyy/athar-portfolio/raw/main/screenshots/admin.png" width="95%" alt="Main Management Dashboard" />
   <br><em>Figure 6: The core Management interface featuring Archive Initialization and Trace Ingestion.</em>
 </p>
 
@@ -65,7 +65,7 @@ Once authenticated, the user enters the **System: 02** dashboard. This interface
 The **Archive Management** section provides a bird's-eye view of all active collections, including live asset counts for each geographic location.
 
 <p align="center">
-  <img src="https://github.com/MuhammadMagdyy/athar-portfolio/raw/main/screenshots/Image%2011-05-2026%20at%201.12%20PM%20(2).png" width="95%" alt="Archive Management Fleet" />
+  <img src="https://github.com/MuhammadMagdyy/athar-portfolio/raw/main/screenshots/projectsviewinadmin.png" width="95%" alt="Archive Management Fleet" />
   <br><em>Figure 7: Fleet overview showing active projects like Unterwalden, Copenhagen, and Barcelona.</em>
 </p>
 
@@ -73,7 +73,7 @@ The **Archive Management** section provides a bird's-eye view of all active coll
 For existing archives, the **Trace Editor** provides a side-panel interface to modify metadata or manage individual assets without leaving the dashboard.
 
 <p align="center">
-  <img src="https://github.com/MuhammadMagdyy/athar-portfolio/raw/main/screenshots/Screenshot%202026-05-11%20at%201.12.59%20PM.png" width="95%" alt="Trace Editor Sidebar" />
+  <img src="https://github.com/MuhammadMagdyy/athar-portfolio/raw/main/screenshots/projectmanagement.png" width="95%" alt="Trace Editor Sidebar" />
   <br><em>Figure 8: Using the "Redefine Identity" tool and managing assets for specific traces.</em>
 </p>
 

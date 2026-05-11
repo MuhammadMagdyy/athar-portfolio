@@ -14,12 +14,6 @@
 * [Getting Started](#getting-started)
 
 ---
-## 📊 Repository Stats.
-<!-- Top Languages -->
-![Top Langs](https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=MuhammadMagdyy&layout=compact&theme=vision-friendly-dark)
-
-<!-- Repo Card -->
-![Repo Stats](https://github-readme-stats-eight-theta.vercel.app/api/pin/?username=MuhammadMagdyy&repo=athar-portfolio&theme=vision-friendly-dark)
 
 ## 🎨 The Public Experience
 

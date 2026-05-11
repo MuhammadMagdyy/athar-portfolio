@@ -1,182 +1,108 @@
-# Athar Portfolio
+# Athar: Visual Trace Studio 🏛️
 
-A modern, full-stack portfolio application built with React and FastAPI, featuring a sleek gallery interface for showcasing creative projects with image and video support.
+**Athar** (أثر) is a high-fidelity visual archiving platform designed to curate and manage geographic "traces." The system balances a minimalist, immersive public gallery with a powerful, industrial-grade administrative backend.
 
-## 🌟 Features
+## 📖 Table of Contents
+* [The Public Experience](#the-public-experience)
+* [The Admin Management System](#the-admin-management-system)
+* [Technical Architecture](#technical-architecture)
+* [Getting Started](#getting-started)
 
-- **Interactive Gallery**: Beautiful masonry-style project gallery with smooth animations
-- **Project Details**: Dedicated pages for each project with media display
-- **Admin Panel**: Secure admin interface for managing projects and uploading media
-- **Media Support**: Support for both images and videos uploaded via Cloudinary
-- **Dark Mode**: Toggle between light and dark themes
-- **Responsive Design**: Optimized for all device sizes
-- **FastAPI Backend**: High-performance Python API with SQLAlchemy ORM
-- **PostgreSQL Database**: Robust data storage with relationships
+---
 
-## 🛠️ Tech Stack
+## 🎨 The Public Experience
 
-### Backend
-- **FastAPI** - Modern, fast web framework for building APIs
-- **SQLAlchemy** - Python SQL toolkit and ORM
-- **PostgreSQL** - Advanced open source relational database
-- **Cloudinary** - Cloud-based image and video management
-- **Uvicorn** - ASGI web server implementation
+### 1. Immersive Multi-Mode Landing
+The entry point features a high-contrast design that adapts to the user's aesthetic preference. It uses refined serif typography and a central focal point to establish the brand identity.
 
-### Frontend
-- **React 19** - JavaScript library for building user interfaces
-- **Vite** - Fast build tool and development server
-- **Tailwind CSS** - Utility-first CSS framework
-- **Framer Motion** - Production-ready motion library for React
-- **React Router** - Declarative routing for React
-- **React Masonry CSS** - Masonry layout for React
+| **Dark Mode (Default)** | **Light Mode (Clean)** |
+|---|---|
+| ![Landing Dark](https://github.com/MuhammadMagdyy/athar-portfolio/raw/main/screenshots/Image%2011-05-2026%20at%201.10%20PM.png) | ![Landing Light](https://github.com/MuhammadMagdyy/athar-portfolio/raw/main/screenshots/Screenshot%202026-05-11%20at%201.13.13%20PM.png) |
+| *Figure 1: Hero section with glow-active branding.* | *Figure 2: Hero section in minimalist light mode.* |
+
+### 2. The Gallery Overview
+The public gallery organizes visual traces by global location. Each project card displays the city name, national flag, and an "Inspect Trace" overlay for user interaction.
+
+<p align="center">
+  <img src="https://github.com/MuhammadMagdyy/athar-portfolio/raw/main/screenshots/Image%2011-05-2026%20at%201.11%20PM.png" width="90%" alt="Gallery Overview" />
+  <br><em>Figure 3: Scrollable gallery view showcasing Port Said and Ulm archives.</em>
+</p>
+
+### 3. Project Detail View
+When a user "inspects" a trace, the system transitions to a dedicated project view. This layout prioritizes imagery, providing high-resolution previews and download capabilities for specific assets.
+
+<p align="center">
+  <img src="https://github.com/MuhammadMagdyy/athar-portfolio/raw/main/screenshots/Screenshot%202026-05-11%20at%201.11.55%20PM.png" width="90%" alt="Project Detail" />
+  <br><em>Figure 4: Detailed view for the Ulm, Germany archive.</em>
+</p>
+
+---
+
+## 🛠️ The Admin Management System
+
+The **Athar Management System** is a private-tier dashboard designed for curators to orchestrate the studio's output. It provides a full CRUD (Create, Read, Update, Delete) interface for geographic archives.
+
+### 1. System Access & Security
+Access to administrative tools is gated by a dedicated "Access System" interface, ensuring that curation tools and professional design metadata remain protected.
+
+<p align="center">
+  <img src="https://github.com/MuhammadMagdyy/athar-portfolio/raw/main/screenshots/Image%2011-05-2026%20at%201.12%20PM.png" width="85%" alt="Access System Gate" />
+  <br><em>Figure 5: The administrative entry point for system authentication.</em>
+</p>
+
+### 2. The Management Dashboard
+Once authenticated, the user enters the **System: 02** dashboard. This interface is built for high-speed content ingestion and collection initialization.
+
+<p align="center">
+  <img src="https://github.com/MuhammadMagdyy/athar-portfolio/raw/main/screenshots/Image%2011-05-2026%20at%201.12%20PM%20(1).png" width="95%" alt="Main Management Dashboard" />
+  <br><em>Figure 6: The core Management interface featuring Archive Initialization and Trace Ingestion.</em>
+</p>
+
+* **01 New Archive:** Initialize a collection by entering a unique collection name.
+* **02 Trace Ingestion:** Select a target city and upload assets via a drag-and-drop media zone.
+
+### 3. Archive Fleet Overview
+The **Archive Management** section provides a bird's-eye view of all active collections, including live asset counts for each geographic location.
+
+<p align="center">
+  <img src="https://github.com/MuhammadMagdyy/athar-portfolio/raw/main/screenshots/Image%2011-05-2026%20at%201.12%20PM%20(2).png" width="95%" alt="Archive Management Fleet" />
+  <br><em>Figure 7: Fleet overview showing active projects like Unterwalden, Copenhagen, and Barcelona.</em>
+</p>
+
+### 4. The Trace Editor (Granular Control)
+For existing archives, the **Trace Editor** provides a side-panel interface to modify metadata or manage individual assets without leaving the dashboard.
+
+<p align="center">
+  <img src="https://github.com/MuhammadMagdyy/athar-portfolio/raw/main/screenshots/Screenshot%202026-05-11%20at%201.12.59%20PM.png" width="95%" alt="Trace Editor Sidebar" />
+  <br><em>Figure 8: Using the "Redefine Identity" tool and managing assets for specific traces.</em>
+</p>
+
+---
+
+## 💻 Technical Architecture
+
+* **Frontend Ecosystem:** Built with **React** to handle dynamic transitions between public views and management panels.
+* **Backend Services:** Powered by **FastAPI** for robust asset handling, ingestion pipelines, and metadata management.
+* **Design Language:** Custom minimalist UI with dark-mode focus, high-contrast serif typography, and support for international descriptors.
+
+---
 
 ## 🚀 Getting Started
 
-### Prerequisites
+1.  **Clone the Repository**
+    ```bash
+    git clone https://github.com/MuhammadMagdyy/athar-portfolio.git
+    ```
 
-- Python 3.8+
-- Node.js 16+
-- PostgreSQL database
-- Cloudinary account (for media uploads)
+2.  **Install Dependencies**
+    ```bash
+    npm install
+    ```
 
-### Installation
+3.  **Run Development Server**
+    ```bash
+    npm run dev
+    ```
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/MuhammadMagdyy/athar-portfolio.git
-   cd athar-portfolio
-   ```
-
-2. **Backend Setup**
-   ```bash
-   cd backend
-
-   # Create virtual environment
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-   # Install dependencies
-   pip install -r requirements.txt
-
-   # Set up environment variables
-   cp .env.example .env
-   # Edit .env with your database URL and Cloudinary credentials
-   ```
-
-3. **Frontend Setup**
-   ```bash
-   cd ../frontend
-
-   # Install dependencies
-   npm install
-   ```
-
-4. **Database Setup**
-   ```bash
-   # Make sure PostgreSQL is running
-   # Create database and update DATABASE_URL in backend/.env
-   ```
-
-### Running the Application
-
-1. **Start the Backend**
-   ```bash
-   cd backend
-   source venv/bin/activate
-   uvicorn main:app --reload
-   ```
-   Backend will be available at `http://localhost:8000`
-
-2. **Start the Frontend**
-   ```bash
-   cd frontend
-   npm run dev
-   ```
-   Frontend will be available at `http://localhost:5173`
-
-## 📁 Project Structure
-
-```
-athar-portfolio/
-├── backend/
-│   ├── main.py          # FastAPI application and routes
-│   ├── models.py        # SQLAlchemy database models
-│   ├── schemas.py       # Pydantic schemas for API
-│   ├── database.py      # Database configuration
-│   └── requirements.txt # Python dependencies
-├── frontend/
-│   ├── src/
-│   │   ├── components/  # Reusable React components
-│   │   ├── pages/       # Page components
-│   │   ├── App.jsx      # Main app component
-│   │   └── api.js       # API configuration
-│   ├── package.json     # Node dependencies
-│   └── vite.config.js   # Vite configuration
-└── README.md
-```
-
-## 🔧 API Endpoints
-
-### Projects
-- `GET /api/projects` - Get all projects
-- `POST /api/projects` - Create new project
-- `GET /api/projects/{id}` - Get project details
-- `PUT /api/projects/{id}` - Update project
-
-### Media Upload
-- `POST /api/upload` - Upload media to project
-
-## 🎨 Usage
-
-### Viewing Projects
-- Navigate to the gallery to see all projects
-- Click on any project to view details and media
-
-### Admin Panel
-- Visit `/admin` to access the admin interface
-- Create new projects
-- Upload images/videos to projects
-- Edit project names
-- Delete projects and media
-
-## 🔐 Environment Variables
-
-Create a `.env` file in the backend directory with:
-
-```env
-DATABASE_URL=postgresql://user:password@localhost/dbname
-CLOUDINARY_NAME=your_cloud_name
-CLOUDINARY_API_KEY=your_api_key
-CLOUDINARY_API_SECRET=your_api_secret
-```
-
-## 🚀 Deployment
-
-### Backend (Render)
-1. Connect your GitHub repository to Render
-2. Set build command: `pip install -r requirements.txt`
-3. Set start command: `uvicorn main:app --host 0.0.0.0 --port $PORT`
-
-### Frontend (Vercel/Netlify)
-1. Build command: `npm run build`
-2. Publish directory: `dist`
-3. Update API_BASE_URL in `src/api.js` for production
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- Built with ❤️ using modern web technologies
-- Inspired by creative portfolio designs
-- Thanks to the open-source community</content>
-<parameter name="filePath">/Users/muhammadmagdy/Desktop/Projects/Full Stack Projects/athar-portfolio/README.md
+---
+*Developed by Muhammad Magdy.*
